@@ -2,7 +2,7 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ["randomuser.me"],
+    domains: ["randomuser.me", "platform-lookaside.fbsbx.com"],
   },
   experimental: {
     appDir: true,

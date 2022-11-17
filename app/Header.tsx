@@ -2,24 +2,27 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import LogoutBtn from "./LogoutBtn";
+import { unstable_getServerSession } from "next-auth/next";
 
-function Header() {
+async function Header() {
   // Here session will be the value we pull from the NextAuth session object
-  const session = true;
+  // const session = true;
+  const session = await unstable_getServerSession();
   if (session)
     return (
       <header className="sticky top-0 z-50 bg-white flex justify-between items-center p-10 shadow-md">
         <div className="flex space-x-2">
           <Image
-            src="/logo.png"
+            // src="/logo.png"
+            src={session.user?.image!}
             alt="Profile Picture"
-            height={10}
+            height={50}
             width={50}
             className="rounded-full mx-2 object-contain"
           />
           <div>
             <p className="text-blue-400">Logged in as:</p>
-            <p className="font-bold text-lg">Valyn D'silva</p>
+            <p className="font-bold text-lg">{session.user?.name}</p>
           </div>
         </div>
         <LogoutBtn />
