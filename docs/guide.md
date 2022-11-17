@@ -873,11 +873,13 @@ export const serverPusher = new Pusher({
 });
 
 export const clientPusher = new ClientPusher("591a7752fe0dac421398", {
-  cluster: process.env.PUSHER_CLUSTER!,
+  cluster: "eu",
   forceTLS: true,
 });
 
 ```
+
+If you use environment variables in the clientPusher it does not work.
 
 Next click on the "Debug Console" in Pusher.
 
