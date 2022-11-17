@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 import React from "react";
 import LogoutBtn from "./LogoutBtn";
 import { unstable_getServerSession } from "next-auth/next";
@@ -36,12 +36,12 @@ async function Header() {
           <p className="text-blue-400">Welcome to Meta Messenger</p>
         </div>
 
-        <Link
+        {/* <Link
           href="/auth/signin"
           className="bg-blue-500 hover:gb-blue-700 text-white font-bold py-2 px-4 rounded"
         >
           Sign In
-        </Link>
+        </Link> */}
       </div>
     </header>
   );

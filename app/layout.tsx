@@ -10,6 +10,7 @@ export default async function RootLayout({
     <html>
       <head />
       <body>
+        {/*@ts-ignore*/}
         <Header />
         {children}
       </body>
